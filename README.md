@@ -22,9 +22,9 @@ A League of Legends Advanced Account Checker
 
 
 **Upcoming:**
-* Bypassing Password Change Error (already added in code but i need to add proxy support)
-* Adding Proxy Support To The Whole Checker
-* Fully Supporting Oce, Las, Lan, RU, BR .. etc)
+- [X] Bypassing Password Change Error (already added in code but i need to add proxy support)
+- [ ] Adding Proxy Support To The Whole Checker
+- [ ] Fully Supporting Oce, Las, Lan, RU, BR .. etc)
 * Any Suggestions ?
 
 **Problems:**
