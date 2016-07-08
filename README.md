@@ -5,11 +5,11 @@ A League of Legends Advanced Account Checker
 **Donations are accepted at this bitcoin address 16Xmx6UmPAySLSaMiDtyNYVFtqetKZnhmr**
 
 **Screenshots:**
-* http://i.imgur.com/XmKGPjg.png
-* http://i.imgur.com/Db3RsWc.png
+* [Screenshot 1] (http://i.imgur.com/XmKGPjg.png)
+* [Screenshot 2] (http://i.imgur.com/Db3RsWc.png)
 
 **Video:**
-* https://www.youtube.com/watch?v=zpZ-UF3R9EU
+* [Youtube Video] (https://www.youtube.com/watch?v=zpZ-UF3R9EU)
 
 **Features:** 
 * Offically Supported EUNE, EUW, NA Servers
