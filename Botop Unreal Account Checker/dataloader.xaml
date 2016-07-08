@@ -1,0 +1,14 @@
+﻿<Controls:MetroWindow x:Class="dataloader"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    BorderBrush="{DynamicResource AccentColorBrush}"
+                      BorderThickness="1" 
+    Title="Botop UNREAL Checker - Patch Data Loader" Height="141.107" Width="454.273" Loaded="MetroWindow_Loaded">
+    <Grid>
+        <Label x:Name="lbl_status" FontSize="18" Content="Loading Data For Patch " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ProgressBar x:Name="prog" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Width="424" Height="19"/>
+        <Label x:Name="lbl_prog" Content="0/0 Loaded" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Controls:MetroWindow>

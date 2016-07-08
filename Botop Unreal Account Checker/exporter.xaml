@@ -1,0 +1,14 @@
+﻿<Controls:MetroWindow  x:Class="exporter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    BorderBrush="{DynamicResource AccentColorBrush}"
+                      BorderThickness="1"
+    Title="Botop Unreal Checker - Advanced Exporting" Height="258.27" Width="596.617">
+    <Grid>
+        <Label Content="%user% = username | %pass% = password | %lvl% = level | %rank% = rank | %sname% = summonername" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="%ccount% = champion count | %scount% = skin count | %ip% = ip | %rp% = rp | %email% = email status" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbox" HorizontalAlignment="Left" Height="105" Margin="10,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="567"/>
+        <Button x:Name="btn_ex" Content="Export" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="565" Height="43"/>
+    </Grid>
+</Controls:MetroWindow>
