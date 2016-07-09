@@ -14,6 +14,26 @@ InitializeComponent
 	<summary>
 viewer
 </summary>
+</member><member name="M:Botop_Unreal_Account_Checker.dataloader.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Botop_Unreal_Account_Checker.dataloader">
+	<summary>
+dataloader
+</summary>
+</member><member name="M:Botop_Unreal_Account_Checker.Application.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:Botop_Unreal_Account_Checker.Application.Main">
+	<summary>
+Application Entry Point.
+</summary>
+</member><member name="T:Botop_Unreal_Account_Checker.Application">
+	<summary>
+Application
+</summary>
 </member><member name="M:Botop_Unreal_Account_Checker.exporter.InitializeComponent">
 	<summary>
 InitializeComponent
@@ -38,25 +58,18 @@ InitializeComponent
 	<summary>
 Moreviewer
 </summary>
-</member><member name="M:Botop_Unreal_Account_Checker.Application.InitializeComponent">
+</member><member name="P:Botop_Unreal_Account_Checker.My.Resources.Resources.ResourceManager">
 	<summary>
-InitializeComponent
+  Returns the cached ResourceManager instance used by this class.
 </summary>
-</member><member name="M:Botop_Unreal_Account_Checker.Application.Main">
+</member><member name="P:Botop_Unreal_Account_Checker.My.Resources.Resources.Culture">
 	<summary>
-Application Entry Point.
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
 </summary>
-</member><member name="T:Botop_Unreal_Account_Checker.Application">
+</member><member name="T:Botop_Unreal_Account_Checker.My.Resources.Resources">
 	<summary>
-Application
-</summary>
-</member><member name="M:Botop_Unreal_Account_Checker.dataloader.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
-</member><member name="T:Botop_Unreal_Account_Checker.dataloader">
-	<summary>
-dataloader
+  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member><member name="P:Botop_Unreal_Account_Checker.My.MyWpfExtension.Application">
 	<summary>
@@ -84,19 +97,6 @@ dataloader
  Module used to define the properties that are available in the My Namespace for WPF
  </summary>
 	<remarks></remarks>
-</member><member name="P:Botop_Unreal_Account_Checker.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:Botop_Unreal_Account_Checker.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:Botop_Unreal_Account_Checker.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
 </member>
 </members>
 </doc>

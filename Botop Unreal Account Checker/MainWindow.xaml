@@ -32,7 +32,7 @@
         <Label Content="Bitcoin Donations Are Accepted Here To Keep This Project Alive" HorizontalAlignment="Left" Margin="10,322,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="16,348,0,0" TextWrapping="Wrap" Text="16Xmx6UmPAySLSaMiDtyNYVFtqetKZnhmr" VerticalAlignment="Top" Width="245"/>
         <Button x:Name="btn_about_Copy" Content="Copy" HorizontalAlignment="Left" Margin="264,348,0,0" VerticalAlignment="Top" Width="63" Height="26"/>
-        <Label Content="Contact Me At halearn@gmail.com" HorizontalAlignment="Left" Margin="117,387,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contact Me At halearn@gmail.com" HorizontalAlignment="Left" Margin="117,395,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Controls:MetroWindow>

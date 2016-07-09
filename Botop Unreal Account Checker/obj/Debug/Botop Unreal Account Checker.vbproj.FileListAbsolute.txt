@@ -120,3 +120,34 @@ D:\Botop Unreal Account Checker - Copy\Botop Unreal Account Checker\obj\Debug\Bo
 D:\Botop Unreal Account Checker - Copy\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.g.resources
 D:\Botop Unreal Account Checker - Copy\Botop Unreal Account Checker\obj\Debug\Botop_Unreal_Account_Checker.Resources.resources
 D:\Botop Unreal Account Checker - Copy\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.vbproj.GenerateResource.Cache
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\Botop Unreal Account Checker.exe.config
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.exe
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.xml
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.pdb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\Botop Unreal Account Checker.exe
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\Botop Unreal Account Checker.pdb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\Botop Unreal Account Checker.xml
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\MahApps.Metro.dll
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\PVPNetClient.dll
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\rtmp-sharp.dll
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\MahApps.Metro.pdb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\MahApps.Metro.xml
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.vbprojResolveAssemblyReference.cache
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\dataloader.baml
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\exporter.baml
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\MainWindow.baml
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Moreviewer.baml
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\viewer.baml
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Application.baml
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\dataloader.g.vb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\exporter.g.vb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\MainWindow.g.vb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Moreviewer.g.vb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\viewer.g.vb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Application.g.vb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker_MarkupCompile.cache
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.g.resources
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Botop_Unreal_Account_Checker.Resources.resources
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.vbproj.GenerateResource.Cache
