@@ -185,3 +185,7 @@ C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker - Copy\Botop Unr
 C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker - Copy\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.exe
 C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker - Copy\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.xml
 C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker - Copy\Botop Unreal Account Checker\obj\Debug\Botop Unreal Account Checker.pdb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\agsxmpp.dll
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\StarkSoftProxy.dll
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\agsxmpp.pdb
+C:\Users\said\Documents\GitHub\Botop-Unreal-LOL-Account-Checker\Botop Unreal Account Checker\bin\Debug\StarkSoftProxy.pdb

@@ -242,7 +242,6 @@ Public Class Checker
     Dim stp As New Stopwatch
     Dim ts As New TimeSpan
     Sub New(ByVal acc As Imported_Data.Account, ByVal client As String, ByVal region As PVPNetClient.Region)
-        Exit Sub
         Try
             stp.Start()
             acc_ = acc
