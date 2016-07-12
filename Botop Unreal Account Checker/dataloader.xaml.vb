@@ -27,12 +27,42 @@ Public Class dataloader
     
   
    
+    Private Async Sub OnDownloadComplete(ByVal sender As Object, ByVal e As AsyncCompletedEventArgs)
+        Try
+            If Not e.Cancelled AndAlso e.Error Is Nothing Then
+                'ctr.SetProgress(1)
+                Complete.TrySetResult(True)
+                Await ShowMessageAsync("Program will update now.", "Program will update now :)")
+                Try : Process.Start(System.AppDomain.CurrentDomain.BaseDirectory & "\up.exe") : Catch : End Try
+                End
+            Else
 
+                MsgBox((e.Error.InnerException.Message()), "Error")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+    End Sub
 
     Private Async Sub MetroWindow_Loaded(sender As Object, e As RoutedEventArgs)
+        Dim updata As String = New Net.WebClient().DownloadString("https://raw.githubusercontent.com/halearn/Botop-Unreal-LOL-Account-Checker/master/version" & "?t=" & Now.Ticks)
         Dim assembly As System.Reflection.Assembly = System.Reflection.Assembly.GetExecutingAssembly()
+        Dim ve As String = updata.Split("#")(0)
+        Dim url As String = updata.Split("#")(1)
+        Dim vv As System.Version = assembly.GetName().Version
+        If Not ve = vv.Major & "." & vv.Minor & ".0.0" Then
+            Dim funkynoise As New System.Net.WebClient
+            AddHandler funkynoise.DownloadFileCompleted, AddressOf OnDownloadComplete
+            funkynoise.DownloadFileAsync(New System.Uri(url), System.AppDomain.CurrentDomain.BaseDirectory & "\up.exe")
+            Dim l As Boolean = Await Complete.Task
+            If l = True Then
+                Exit Sub
+            Else
 
-      
+            End If
+        End If
+
 
         Dim Data As String = New System.Net.WebClient().DownloadString("https://global.api.pvp.net/api/lol/static-data/eune/v1.2/versions?api_key=" & key)
         Dim Riot_Version As String = Data.Split(""",").GetValue(1)
@@ -91,11 +121,6 @@ Public Class dataloader
 
         IO.File.WriteAllText(Environment.CurrentDirectory & "\data.json", New System.Web.Script.Serialization.JavaScriptSerializer().Serialize(mydata))
         Try
-            '   Process.Start(Application.ResourceAssembly.Location)
-            '     Dispatcher.Invoke(Sub()
-            ' Application.Current.Shutdown()
-
-            '                 End Sub)
             Dispatcher.Invoke(Sub()
 
                                   Dim m As New MainWindow
@@ -112,11 +137,6 @@ Public Class dataloader
                               End Sub)
 
         Catch eee As Exception
-            '   Process.Start(Application.ResourceAssembly.Location)
-            '  Dispatcher.Invoke(Sub()
-            '  Application.Current.Shutdown()
-            '
-            '           End Sub)
             MsgBox(eee.Message)
         End Try
     End Sub

@@ -42,7 +42,7 @@ Class MainWindow
 #End Region
     
 #Region "UI handling"
-    Private Sub MetroWindow_Loaded(sender As Object, e As RoutedEventArgs)
+    Private Async Sub MetroWindow_Loaded(sender As Object, e As RoutedEventArgs)
         lbl1.Visibility = Windows.Visibility.Hidden
         lbl2.Visibility = Windows.Visibility.Hidden
         lbl3.Visibility = Windows.Visibility.Hidden
@@ -242,7 +242,7 @@ Public Class Checker
     Dim stp As New Stopwatch
     Dim ts As New TimeSpan
     Sub New(ByVal acc As Imported_Data.Account, ByVal client As String, ByVal region As PVPNetClient.Region)
-
+        Exit Sub
         Try
             stp.Start()
             acc_ = acc
@@ -458,8 +458,11 @@ a:
     Public Function GetSummonerId(user As String, pass As String, region As String) As Task(Of String)
         Dim tsc As TaskCompletionSource(Of String) = New TaskCompletionSource(Of String)()
         Dim xmpp As XmppClientConnection = New XmppClientConnection(String.Format("chat.{0}.lol.riotgames.com", region), 5223) With {.UseSSL = True, .Resource = "xiff", .AutoRoster = False, .AutoPresence = False}
+        ' xmpp.SocketConnect("67.149.54.140", "17374")
+
         xmpp.Open(user, "AIR_" + pass)
         xmpp.Server = "pvp.net"
+
 
         AddHandler xmpp.OnBinded, Sub(sender As Object)
                                       tsc.SetResult(xmpp.MyJID.User.Substring(3))
@@ -472,19 +475,29 @@ a:
         AddHandler xmpp.OnBindError, Sub(sender As Object, element As Element)
                                          tsc.SetException(New Exception("Internal Error"))
                                          xmpp.Close()
+
+
                                      End Sub
         AddHandler xmpp.OnSocketError, Sub(sender As Object, exception As Exception)
                                            tsc.SetException(New Exception("Connection Error"))
                                            xmpp.Close()
+
+
                                        End Sub
         AddHandler xmpp.OnError, Sub(sender As Object, exception As Exception)
                                      tsc.SetException(New Exception("Internal Error"))
+
                                      xmpp.Close()
+
+
                                  End Sub
         AddHandler xmpp.OnStreamError, Sub(sender As Object, element As Element)
                                            tsc.SetException(New Exception("Internal Error"))
                                            xmpp.Close()
+
+
                                        End Sub
+
         Return tsc.Task
     End Function
     Function getinfo(sid As String, user As String, pass As String, reserver As String) As Task(Of Boolean)

@@ -48,8 +48,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="agsXMPP">
-      <HintPath>..\..\Botop Mass Checker\Botop Mass Checker\bin\Debug\agsXMPP.dll</HintPath>
+    <Reference Include="agsxmpp, Version=1.3.1.0, Culture=neutral, PublicKeyToken=ff839b81f1debe86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Visual Studio 2013\Projects\agsxmpp-master\agsxmpp\bin\Debug\agsxmpp.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.1.3.0-ALPHA173\lib\net45\MahApps.Metro.dll</HintPath>
@@ -63,6 +64,9 @@
     </Reference>
     <Reference Include="rtmp-sharp">
       <HintPath>D:\LoL-Account-Checker-PuppyLover101-master\LoLAccChecker-PuppyLover101\rtmp-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkSoftProxy">
+      <HintPath>..\..\..\Visual Studio 2013\Projects\agsxmpp-master\agsxmpp\bin\Debug\StarkSoftProxy.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Extensions" />
