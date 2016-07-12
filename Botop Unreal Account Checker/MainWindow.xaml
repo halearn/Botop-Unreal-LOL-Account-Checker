@@ -22,7 +22,7 @@
         <Label x:Name="lbl_prog" Content="0 %" HorizontalAlignment="Left" Margin="5,238,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.105,0.154"/>
         <ProgressBar x:Name="pbar" HorizontalAlignment="Left" Margin="5,216,0,0" VerticalAlignment="Top" Width="415" Height="22"/>
         <Label x:Name="lbl_threads" Content="0 Threads" HorizontalAlignment="Left" Margin="10,377,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.105,0.154"/>
-        <CheckBox IsEnabled="False" x:Name="chkpw" Content="Try Bypass PWChange [UNSTABLE]" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top"/>
+        <CheckBox  x:Name="chkpw" Content="Try Bypass PWChange [UNSTABLE]" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top"/>
         <Label Content="Timeout Account Check After (Seconds):" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top"/>
         <xctk:IntegerUpDown x:Name="timeoutupdown" HorizontalAlignment="Left" Margin="237,168,0,0" VerticalAlignment="Top" Width="79" Maximum="100000" Minimum="1" Value="30" Height="26"/>
         <Label x:Name="lbl1" Content="Clicking Pause Will Stop " HorizontalAlignment="Left" Margin="259,51,0,0" VerticalAlignment="Top"/>

