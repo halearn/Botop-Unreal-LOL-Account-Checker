@@ -56,6 +56,7 @@ Class MainWindow
         regionbox.Items.Add(PVPNetClient.Region.BR)
         regionbox.Items.Add(PVPNetClient.Region.TR)
         regionbox.Items.Add(PVPNetClient.Region.RU)
+        regionbox.Items.Add(PVPNetClient.Region.KR)
         regionbox.SelectedIndex = 0
         Dim j As String = New System.Net.WebClient().DownloadString("https://global.api.pvp.net/api/lol/static-data/eune/v1.2/versions?api_key=" & My.Settings.apikey)
         txt_clientversion.Text = j.Split(""",").GetValue(1)
@@ -71,6 +72,7 @@ Class MainWindow
                 currentthreads = 0
                 checkedaccounts = 0
                 btn_importaccounts.IsEnabled = False
+                btn_importaccounts_Copy.IsEnabled = False
                 btn_start.Content = "Pause"
                 lbl1.Visibility = Windows.Visibility.Visible
                 lbl2.Visibility = Windows.Visibility.Visible
@@ -81,7 +83,6 @@ Class MainWindow
                 clientversion = txt_clientversion.Text
                 pbar.Maximum = ImportedAccounts.Count
                 Dim reg As PVPNetClient.Region = DirectCast(regionbox.SelectedItem, PVPNetClient.Region)
-                '  MsgBox(reg)
                 Await ShowMessageAsync("Please Choose A Folder To Save This Project", "")
                 Dim f As New System.Windows.Forms.FolderBrowserDialog
                 If f.ShowDialog = Forms.DialogResult.OK Then
@@ -101,6 +102,7 @@ Class MainWindow
                                                                               pbar.Maximum = 100
                                                                               lbl_prog.Content = pbar.Value & "/" & pbar.Maximum & " (" & Math.Round((pbar.Value / pbar.Maximum) * 100) & " %) " & workingaccounts & " Working Accounts " & pwbypass & " PWBypassed " & outed & " Timeouted Checks."
                                                                               btn_importaccounts.IsEnabled = True
+                                                                              btn_importaccounts_Copy.IsEnabled = True
                                                                               Await ShowMessageAsync("Checking Done", "Checking Done")
                                                                               Dim v As New viewer(homefolder & "\project.botop")
                                                                               v.ShowDialog()
@@ -138,8 +140,7 @@ Class MainWindow
 
                                                                          Catch ex As Exception
                                                                              checkedaccounts += 1
-                                                                             '   MsgBox(ex.Message)
-                                                                             '  MsgBox(ex.StackTrace)
+                                                                            
                                                                          End Try
                                                                      End Sub)
                                                 tt.Start()
@@ -231,6 +232,29 @@ a:
         Await ShowMessageAsync("Copied", "Copied")
 
     End Sub
+
+    Private Async Sub btn_importaccounts_Copy_Click(sender As Object, e As RoutedEventArgs) Handles btn_importaccounts_Copy.Click
+
+        If Not Clipboard.GetText = "" Then
+            Parallel.ForEach(My.Computer.Clipboard.GetText.Split(New String() {Environment.NewLine},
+                             StringSplitOptions.None), Sub(i)
+                                                           Try
+                                                               Dim account As New Imported_Data.Account
+                                                               account.username = i.Split(":")(0)
+                                                               account.password = i.Split(":")(1)
+                                                               ImportedAccounts.Add(account)
+                                                           Catch
+
+                                                           End Try
+                                                       End Sub)
+            Await ShowMessageAsync("Accounts Imported", ImportedAccounts.Count & " Account Imported.")
+        Else
+            Await ShowMessageAsync("Clipboard is empty", "Clipboard is empty")
+
+        End If
+       
+
+    End Sub
 End Class
 
 
@@ -258,7 +282,6 @@ Public Class Checker
                                         MainWindow.currentthreads -= 1
                                         MainWindow.checkedaccounts += 1
                                         MainWindow.outed += 1
-                                        '  MsgBox("ouy")
 
 b:
                                         Try
@@ -272,7 +295,6 @@ b:
                                 End Sub)
             t.Start()
         Catch ex As Exception
-            ' MsgBox(ex.Message)
             MainWindow.currentthreads -= 1
             MainWindow.checkedaccounts += 1
             stp.Stop()
@@ -281,6 +303,8 @@ b:
     Function regiottoserver(r As PVPNetClient.Region)
         Dim rt As String
         Select Case r
+            Case PVPNetClient.Region.KR
+                rt = "kr"
             Case PVPNetClient.Region.EUNE
                 rt = "eune"
             Case PVPNetClient.Region.EUW
@@ -392,7 +416,6 @@ b:
 B:
                 System.IO.File.WriteAllText(MainWindow.homefolder & "\acc_" & Account.SummonerID, New Web.Script.Serialization.JavaScriptSerializer().Serialize(Account))
             Catch ex As Exception
-                ' MsgBox(ex.Message)
                 Thread.Sleep(New Random().Next(1, 100))
                 GoTo b
             End Try
@@ -400,7 +423,6 @@ B:
 a:
                 System.IO.File.AppendAllText(MainWindow.homefolder & "\project.botop", "acc_" & Account.SummonerID & vbNewLine)
             Catch ex As Exception
-                '  MsgBox(ex.Message)
                 Thread.Sleep(New Random().Next(1, 100))
                 GoTo a
             End Try
@@ -436,6 +458,8 @@ a:
                 rt = "la2"
             Case PVPNetClient.Region.LAN
                 rt = "la1"
+            Case PVPNetClient.Region.KR
+                rt = "kr"
         End Select
         Return rt
     End Function
@@ -499,8 +523,6 @@ b:
         Return tsc.Task
     End Function
     Function getinfo(sid As String, user As String, pass As String, reserver As String) As Task(Of Boolean)
-
-
         Try
 a:
             Dim Account As New CheckingData.Account
@@ -520,6 +542,7 @@ a:
                 level = level.Substring(1, level.Length - 2)
                 Account.Password = (pass)
                 Account.SummonerName = (name)
+
                 Try
                     Dim step2 As String = New WebClient().DownloadString("https://" & reserver & ".api.pvp.net/api/lol/" & reserver & "/v2.5/league/by-summoner/" & sid & "/entry?api_key=" & My.Settings.apikey)
 

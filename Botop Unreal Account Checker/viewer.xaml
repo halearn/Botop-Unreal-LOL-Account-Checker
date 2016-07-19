@@ -22,6 +22,7 @@
                             <ContextMenu >
                                 <MenuItem Header="View Details" Click="Menu_view"  />
                                 <MenuItem Header="Export" Click="Menu_exp"  />
+                                <MenuItem Header="Copy User:Pass" Click="Menu_copy"  />
 
                             </ContextMenu>
                         </DataGrid.ContextMenu>
@@ -39,6 +40,7 @@
                             <ContextMenu >
                                 <MenuItem Header="View Details" Click="Menu2_view"  />
                                 <MenuItem Header="Export" Click="Menu2_exp"  />
+                                <MenuItem Header="Copy User:Pass" Click="Menu2_copy"  />
 
                             </ContextMenu>
                         </DataGrid.ContextMenu>

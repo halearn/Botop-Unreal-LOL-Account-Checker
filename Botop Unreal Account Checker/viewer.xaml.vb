@@ -1,4 +1,5 @@
 ﻿Imports System.Windows.Forms
+Imports MahApps.Metro.Controls.Dialogs
 ' Copyright 2016 BotOp Unreal LOL Account Checker
 '
 ' This file is part of BotOp Unreal LOL Account Checker.
@@ -183,6 +184,30 @@ Public Class viewer
             e.Column.Header = "Email Status"
         End If
     End Sub
+    Async Sub Menu_copy()
+        If viewdatagrid1.SelectedItems.Count > 0 Then
+            Dim cp As String = ""
+            For Each item In viewdatagrid1.SelectedItems
+                Dim acc As New Viewed.Account
+                acc = item
+                cp += acc.Username & ":" & acc.Password & vbNewLine
+            Next
+            My.Computer.Clipboard.SetText(cp)
+            Await ShowMessageAsync(viewdatagrid1.SelectedItems.Count & " Account Copied To Clipboard.", viewdatagrid1.SelectedItems.Count & " Account Copied To Clipboard.")
+        End If
+    End Sub
+    Async Sub Menu2_copy()
+        If viewdatagrid2.SelectedItems.Count > 0 Then
+            Dim cp As String = ""
+            For Each item In viewdatagrid2.SelectedItems
+                Dim acc As New Viewed.Account
+                acc = item
+                cp += acc.Username & ":" & acc.Password & vbNewLine
+            Next
+            My.Computer.Clipboard.SetText(cp)
+            Await ShowMessageAsync(viewdatagrid2.SelectedItems.Count & " Account Copied To Clipboard.", viewdatagrid2.SelectedItems.Count & " Account Copied To Clipboard.")
+        End If
+    End Sub
     Sub Menu_view()
         If viewdatagrid1.SelectedItems.Count = 1 Then
             Dim acc As New Viewed.Account
@@ -245,11 +270,6 @@ Public Class viewer
         viewdatagrid2.ItemsSource = finalfilter
         Try
             If filter_champs.SelectedItem = "NONE" Then
-                '  For Each acc In filtered
-                '   If acc.Level >= lvlint.Value Then
-                'finalfilter.Add(acc)
-                ''    End If
-                ' Next
             ElseIf filter_skins.SelectedItem = "NONE" Then
                 For Each acc In Accounts
                     For Each c In acc.ChampionData

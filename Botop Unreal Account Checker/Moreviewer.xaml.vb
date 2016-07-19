@@ -39,27 +39,39 @@ Public Class Moreviewer
         ex.ShowDialog()
     End Sub
 
+    Public Shared Function JavaTimeStampToDateTime(javaTimeStamp As Double) As DateTime
+        Dim dtDateTime As System.DateTime = New DateTime(1970, 1, 1, 0, 0, 0, _
+            0, System.DateTimeKind.Utc)
+        dtDateTime = dtDateTime.AddSeconds(Math.Round(javaTimeStamp / 1000)).ToLocalTime()
+        Return dtDateTime
+    End Function
+
     Private Sub MetroWindow_Loaded(sender As Object, e As RoutedEventArgs)
-        For Each champ In champions
+        For Each champ In champions.OrderBy(Function(hm) hm.PurchaseDate)
             Try
                 Dim c As New Data.Champion
                 c = daataa.Champions.Find(Function(cc) cc.id = champ.id)
-                list_champ.Items.Add(c.name)
-            Catch
 
+                list_champ.Items.Add(c.name & " -> " & JavaTimeStampToDateTime(champ.PurchaseDate).ToShortDateString)
+            Catch asd As Exception
+                MsgBox(asd.Message)
             End Try
         Next
-        For Each S In Skinss
+        For Each S In Skinss.OrderBy(Function(hhm) hhm.PurchaseDate)
             Try
                 Dim cha As Data.Champion = daataa.Champions.Find(Function(c) c.id = S.championid)
                 For Each Sss In cha.skins
                     If Sss.id = S.id Then
-                        list_skin.Items.Add(Sss.name)
+                        list_skin.Items.Add(Sss.name & " -> " & JavaTimeStampToDateTime(S.PurchaseDate).ToShortDateString)
                     End If
                 Next
             Catch
 
             End Try
         Next
+    End Sub
+
+    Private Sub btn_cpy_Click(sender As Object, e As RoutedEventArgs) Handles btn_cpy.Click
+        My.Computer.Clipboard.SetText(a.Username & ":" & a.Password)
     End Sub
 End Class

@@ -4,13 +4,14 @@
      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
     BorderBrush="{DynamicResource AccentColorBrush}"
                       BorderThickness="1"
-    Title="Botop Unreal Checker - Champion and Skin Viewer" Height="396.79" Width="401.429" Loaded="MetroWindow_Loaded" ResizeMode="NoResize">
+    Title="Botop Unreal Checker - Champion and Skin Viewer" Height="431.119" Width="571.578" Loaded="MetroWindow_Loaded" ResizeMode="NoResize">
     <Grid Background="#FFA1C7EE">
         <Label FontSize="16" Content="Champions" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="16" Content="Skins" HorizontalAlignment="Left" Margin="219,6,0,0" VerticalAlignment="Top" Height="40"/>
-        <ListBox x:Name="list_champ" HorizontalAlignment="Left" Height="276" Margin="10,37,0,0" VerticalAlignment="Top" Width="181"/>
-        <ListBox x:Name="list_skin" HorizontalAlignment="Left" Height="276" Margin="206,37,0,0" VerticalAlignment="Top" Width="173"/>
-        <Button FontSize="16" x:Name="btn_export" Content="Export" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" Width="373"/>
+        <Label FontSize="16" Content="Skins" HorizontalAlignment="Left" Margin="291,6,0,0" VerticalAlignment="Top" Height="40"/>
+        <ListBox x:Name="list_champ" HorizontalAlignment="Left" Height="276" Margin="10,37,0,0" VerticalAlignment="Top" Width="276"/>
+        <ListBox x:Name="list_skin" HorizontalAlignment="Left" Height="276" Margin="291,37,0,0" VerticalAlignment="Top" Width="263"/>
+        <Button FontSize="16" x:Name="btn_export" Content="Export" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" Width="544"/>
+        <Button FontSize="16" x:Name="btn_cpy" Content="Copy User:Pass" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top" Width="544"/>
 
     </Grid>
 </Controls:MetroWindow>
