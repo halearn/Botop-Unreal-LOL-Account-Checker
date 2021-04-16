@@ -1,7 +1,7 @@
 # Botop-Unreal-LOL-Account-Checker
 A League of Legends Advanced Account Checker
 
-**Botop Unreal Account Checker By Saeed Suleiman (BotOP)(Halearn) contact me at halearn@gmail.com**
+**Botop Unreal Account Checker By (BotOP)(Halearn) contact me at halearn@gmail.com**
 **Donations are accepted at this bitcoin address 16Xmx6UmPAySLSaMiDtyNYVFtqetKZnhmr**
 
 **Screenshots:**
